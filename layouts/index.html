@@ -1,23 +1,32 @@
 {{ define "styles" }}
-    {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/about.scss" "dest" "css/about.css") }}
+    {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/posts.scss" "dest" "css/posts.css") }}
 {{ end }}
 
-{{ define "main" }}
+{{ define "main" }}  
 
-<div class="splash-container">
-  <div class="splash">
-    
-    <h1>{{ .Params.heading }}<span class="fancy">.</span></h1>
-    {{ if isset .Params "handle" }}
-    <span class="handle">@{{ .Params.handle }}</span>
+<div class="post-list__container">
+  <ul class="post-list">
+    {{ range .Pages }}
+      {{ partial "post-list-item" .}}
     {{ end }}
-    <h2>
-      {{ .Params.subheading }}
-    </h2>
-    <!-- Replace MEEEEE -->
-
-    {{ partial "social-icons.html" .}}
-  </div>
+  </ul>
+  {{ partial "browse-by-tag.html" .}}
 </div>
 
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "footer.html" .}}
+{{end}}
+
+{{ define "scripts" }}
+  <script>
+    const posts = document.getElementsByClassName("post");
+    for (let post of posts) {
+      console.log('click', post.dataset);
+      post.addEventListener('click', () => {
+        window.location.href = post.dataset.link;
+      });
+    };
+  </script>
 {{ end }}

@@ -15,8 +15,19 @@ $tocBreakpoint: 1024px;
 
 .post {
   width: 100%;
-  max-width: 34rem;
+  max-width: 48rem;
   margin: 0 auto;
+  padding: 2rem;
+  background-color: $color-card;
+  box-shadow: 0 0 10px 0 $color-shadow;
+
+  a {
+    color: $color-accent;  
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $color-accent;
+  }
 
   h2,
   h3 {
@@ -42,9 +53,9 @@ $tocBreakpoint: 1024px;
     width: 95%;
     margin: 0 auto;
     font-size: 1rem;
-
+    color: $color-text;
     a {
-      color: $darkGrey;
+      color: $color-text;
       text-decoration: underline;
     }
   }
@@ -60,6 +71,7 @@ $tocBreakpoint: 1024px;
 #post__title {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  color: $color-accent;
 }
 
 .post__date {
@@ -128,12 +140,14 @@ $tocBreakpoint: 1024px;
   text-decoration: none;
   padding: 0.2em 0.4em;
   border-radius: 3px;
-  background: lighten($primary, 41%);
+  border-bottom: 1px solid $color-highlight;
   color: $primary;
   font-size: 0.8rem;
+  transition: background 100ms ease-in;
 
   &:hover {
-    background: lighten($primary, 38%);
+    background: darken($color-card, 10%);
+    transition: background 100ms ease-in;
   }
 }
 
@@ -160,6 +174,8 @@ $tocBreakpoint: 1024px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 100ms ease-in;
 
   &:nth-child(2) {
     margin-top: 1.5rem;
@@ -176,18 +192,18 @@ $tocBreakpoint: 1024px;
       margin-top: 0;
     }
     &:hover {
-      background-color: #f6f9fc;
+      border-bottom: 2px solid $color-accent;
     }
   }
 }
 
 .pagination__label {
-  color: $grey;
+  color: $color-accent;
   font-size: 0.8rem;
 }
 
 .pagination__title {
-  color: $black;
+  color: $color-text;
   font-weight: 700;
   margin-top: 0.25rem;
 }
@@ -195,7 +211,7 @@ $tocBreakpoint: 1024px;
 footer {
   text-align: center;
   padding: 0 1.5rem;
-  background: $white;
+  background: $color-bg;
 
   p {
     margin-top: 1rem; // reduce margin top due to social icons' padding
@@ -206,6 +222,7 @@ footer {
 
 /* overrides */
 .post__content {
+  color: $color-text;
   ul {
     list-style: none;
 

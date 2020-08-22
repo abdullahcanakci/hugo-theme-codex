@@ -1,9 +1,8 @@
 @import "../main";
-@import "../partials/post-list";
+@import "./posts";
 
 .tag__header {
-  align-items: baseline;
-  display: flex;
+  display: block;
   margin: 0 auto 3rem;
 
   a,

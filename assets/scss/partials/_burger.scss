@@ -5,8 +5,9 @@
   padding: 0 1.5rem;
   position: fixed;
   width: 100%;
-  background: $white;
+  background: $color-card;
   z-index: 2;
+  box-shadow: 0 0 1.5rem 0 $color-shadow;
 
   @media screen and (min-width: $medium) {
     display: none;
@@ -24,7 +25,7 @@
   position: absolute;
   width: $meatWidth;
   height: $meatHeight;
-  background: $black;
+  background: $color-accent;
   top: calc(50% - #{$meatHeight} / 2);
   left: calc(50% - #{$meatWidth} / 2);
   transition: all 150ms ease-in;

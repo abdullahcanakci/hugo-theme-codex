@@ -11,6 +11,8 @@ body.nav--active {
 
 main {
   padding: 3rem 1.5rem 1rem;
+  background-color: $color-bg;
+  min-height: calc(100vh - 3rem);
 
   @media screen and (min-width: $medium) {
     padding-left: calc(1.5rem + #{$navWidth});
@@ -20,3 +22,8 @@ main {
     padding-top: calc(3rem + #{$burgerContainerHeight});
   }
 }
+
+footer {
+   background-color: $color-bg;
+}
+
