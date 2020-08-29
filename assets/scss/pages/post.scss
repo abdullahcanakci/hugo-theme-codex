@@ -17,7 +17,7 @@ $tocBreakpoint: 1024px;
   width: 100%;
   max-width: 48rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: $card-padding;
   background-color: $color-card;
   box-shadow: 0 0 10px 0 $color-shadow;
 

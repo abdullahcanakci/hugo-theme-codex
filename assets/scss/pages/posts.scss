@@ -103,9 +103,18 @@
       color: $color-accent;  
     }
   }
+}
 
-  @media screen and (max-width: $medium) {
-    $card-padding: 1rem;
+
+@media screen and (max-width: $medium) {
+  .post {
+    &__date {
+      display: none;
+    }
+  }
+  
+  .tags__list {
+    display: none;
   }
 }
 
