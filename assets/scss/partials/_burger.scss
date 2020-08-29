@@ -6,7 +6,7 @@
   position: fixed;
   width: 100%;
   background: $color-card;
-  z-index: 2;
+  z-index: 20;
   box-shadow: 0 0 1.5rem 0 $color-shadow;
 
   @media screen and (min-width: $medium) {

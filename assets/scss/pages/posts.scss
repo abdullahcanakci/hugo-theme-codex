@@ -38,7 +38,7 @@
   width: 100%;
   max-width: 48rem;
   margin: 0 auto 1.5rem;
-  padding: 2rem;
+  padding: $card-padding;
   background-color: $color-card;
   box-shadow: 0 0 10px 0 $color-shadow;
 
@@ -69,18 +69,19 @@
     &::after {
         content: "";
         position: absolute;
-        width: 2rem;
+        width: $card-padding;
         top: 0;
         bottom: 0;
         background-color: $color-accent;
+        z-index: -1;
     }
 
     &::before {
-      left: -2rem;
+      left: -$card-padding;
     }
     &::after {
         width: 4.1rem;
-        right: -2rem;
+        right: -$card-padding;
         clip-path: polygon(0 0, calc(100% - 1rem) 0, 100% 50%, calc(100% - 1rem) 100%, 0 100%);
         transform-origin: left;
         z-index: -1;
@@ -101,6 +102,10 @@
     a {
       color: $color-accent;  
     }
+  }
+
+  @media screen and (max-width: $medium) {
+    $card-padding: 1rem;
   }
 }
 
